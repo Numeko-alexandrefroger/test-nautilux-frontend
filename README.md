@@ -4,7 +4,14 @@ Le but de ce test est d'évaluer tes capacités à implémenter les solutions qu
 
 ## Stack technique
 
-Ce projet est basé sur React.
+> **Important :** Pour le bon fonctionnement du projet et de sa compilation utiliser *nvm* pour switcher facilement 
+> entre version de node
+> 
+> Version **node** = **v16.19.1 LTS**
+> 
+> Version **npm** = **8.19.3**
+
+Ce projet est basé sur React. 
 
 La gestion des données se fait grâce à **Redux**.
 
