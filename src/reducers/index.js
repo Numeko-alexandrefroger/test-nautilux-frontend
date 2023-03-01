@@ -26,7 +26,6 @@ export const interventionListReducer = (state = {
         error: action.payload,
       };
     case types.SORT_INTERVENTIONS_BY_DATE:
-      console.log(state.sortByDate)
       const sortedInterventions = [...state.interventions].sort((a, b) => {
         if (state.sortByDate) {
           return new Date(a.created_at) - new Date(b.created_at);
@@ -40,13 +39,11 @@ export const interventionListReducer = (state = {
         interventions: sortedInterventions,
       };
     case types.ADD_INTERVENTION:
-      console.log("ADD_INTERVENTION")
-      console.log("Before", action.payload)
       const intervention = {
         id: state.interventions.length+1,
         ...action.payload,
       }
-      console.log("after", [...state.interventions, intervention])
+
       return {
         ...state,
         isLoading: false,
