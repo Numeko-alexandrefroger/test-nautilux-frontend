@@ -7,6 +7,8 @@ import rootSaga from './sagas';
 
 import Header from './components/Header';
 import InterventionsList from './containers/InterventionsList';
+import Intervention from './containers/Intervention';
+import InterventionCreate from "./containers/InterventionCreate";
 
 sagaMiddleware.run(rootSaga);
 
@@ -19,6 +21,12 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <InterventionsList />
+            </Route>
+            <Route path="/intervention/:id" exact>
+              <Intervention />
+            </Route>
+            <Route path="/create" exact>
+              <InterventionCreate />
             </Route>
           </Switch>
         </div>
