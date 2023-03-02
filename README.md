@@ -35,6 +35,7 @@ Voici les améliorations possibles avec plus de temps :
 - Mettre en place des tests unitaire (TDD) de notre logique métier avec jest. Les tests d'intégration et e2e sont moins important et plus compliqué à mettre en place et à gérer partant du principe qu'un UI peut changer régulièrement.
 - Refactorer les parties qui en ont besoins.
 - Utiliser un framework css (MUI, Tailwind)
+- Utiliser des linters adaptés et corriger les warnings/erreurs des linters.
 
 **Important** : Il est intéressant d'utiliser des surcouches, mais pas au détriment de la livraison de fonctionnalités en production. Il faut que d'autres développeur sénior ou junior puissent agir et développer BIEN rapidement.
 

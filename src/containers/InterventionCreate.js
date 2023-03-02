@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Link, Redirect} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {addIntervention, getInterventions} from "../actions";
+import {addIntervention} from "../actions";
 import {StyledActionHeader, StyledButtonCancel, StyledButtonCreated, StyledButtonCreatedDisabled} from "../ui/styles";
 import styled from "styled-components";
 

@@ -13,7 +13,7 @@ function Intervention() {
 
   useEffect(() => {
     dispatch(getInterventionById(parseInt(id)));
-  }, [dispatch, id]);
+  }, []);
 
   return (
     <Container>
