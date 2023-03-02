@@ -1,4 +1,6 @@
 import * as types from '../types';
+import {format} from "date-fns";
+import {fr} from "date-fns/locale";
 
 export const interventionListReducer = (state = {
   interventions: [],
@@ -41,6 +43,7 @@ export const interventionListReducer = (state = {
     case types.ADD_INTERVENTION:
       const intervention = {
         id: state.interventions.length+1,
+        created_at: format(new Date(), 'yyyy-MM-dd hh:mm:ss', { locale: fr }),
         ...action.payload,
       }
 

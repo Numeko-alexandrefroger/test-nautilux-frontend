@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react';
-import {Link, useHistory, useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {getInterventionById} from "../actions";
+import {StyledActionHeader, StyledButtonCancel} from "../ui/styles";
+import styled from "styled-components";
 
 
 function Intervention() {
@@ -11,52 +13,79 @@ function Intervention() {
 
   useEffect(() => {
     dispatch(getInterventionById(parseInt(id)));
-  }, []);
+  }, [dispatch, id]);
 
   return (
-    <div className="" style={styles.container}>
+    <Container>
     {isLoading && <p>Chargement...</p>}
     {error && <p>An error occurred: {error.message}</p>}
       {intervention !== null &&
       <div>
-        <Link to="/">
-          <button type="button">
-            Retour
-          </button>
-        </Link>
-        <div>
-          <h1>{intervention.name}</h1>
+        <StyledActionHeader>
+          <Link to="/">
+            <StyledButtonCancel>
+              Retour
+            </StyledButtonCancel>
+          </Link>
+        </StyledActionHeader>
+        <InterventionDetails>
+          <h3>{intervention.name}</h3>
           <div>
-            <h5>Description</h5>
-            <span>{intervention.description}</span>
+            <h6>Description</h6>
+            <div>{intervention.description}</div>
           </div>
           <div>
-            <h5>Demandeur</h5>
-            <span>{intervention.sender_name}</span>
-            <span>{intervention.sender_email}</span>
-            <span>{intervention.sender_phone}</span>
+            <h6>Demandeur</h6>
+            <div className={"highlight"}>{intervention.sender_name}</div>
+            <div>{intervention.sender_email}</div>
+            <div>{intervention.sender_phone}</div>
           </div>
-        </div>
+        </InterventionDetails>
       </div>
       }
-    </div>
+    </Container>
   );
 }
 
 export default Intervention;
 
-const styles = {
-  container: {
-    marginTop: '3em',
-    padding: '10em',
-    width: '100%',
-    border: '3px dashed #f1f1f1',
-    borderRadius: '15px',
-    textAlign: 'center',
-  },
-  placeholder: {
-    fontSize: '1.5em',
-    color: '#ccc',
-    fontWeight: 'bold'
+const Container = styled.div`
+  width: 50%;
+  min-width: 200px;
+  max-width: 450px;
+  margin: 0 auto;
+`;
+
+const InterventionDetails = styled.div`
+  border: 1px solid #ECECEC;
+  border-radius: 10px;
+  padding: 10px;
+  
+  & > div {
+    margin-bottom: 20px;
+    
+    .highlight{
+      font-size: 14px;
+      font-weight: bold;
+    }
+      
+    & > div {
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 5px;
+    }
   }
-};
+  h3{
+    margin-bottom: 20px;
+  }
+  
+  h3, h6 {
+    font-weight: bold;
+  }
+  
+  h6 {
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+`;

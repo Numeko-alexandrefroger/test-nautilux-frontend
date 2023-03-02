@@ -2,10 +2,12 @@
 
 Le but de ce test est d'évaluer tes capacités à implémenter les solutions qui permettront à ton interface de communiquer avec une API, de gérer les données et de respecter l'intégration d'un design donné. Nous attendons de ta part que tu sois également capable de maîtriser les outils que nous utilisons dans nos projets.
 
+> **IMPORTANT :** MODIFICATION DU README POUR LE TEST
+
 ## Stack technique
 
-> **Important :** Pour le bon fonctionnement du projet et de sa compilation utiliser *nvm* pour switcher facilement 
-> entre version de node
+> **Important :** Pour le bon fonctionnement du projet et de sa compilation, il est recommandé d'utiliser *nvm* pour switcher facilement 
+> entre version de node. De même yarn a été utilisé pour mieux gérer les dépendances.
 > 
 > Version **node** = **v16.19.1 LTS**
 > 
@@ -18,6 +20,23 @@ La gestion des données se fait grâce à **Redux**.
 Les échanges avec l'API se font avec **axios** et **redux-saga**.
 
 Le routage se base sur **react-navigation**.
+
+## Améliorations possibles
+
+Voici les améliorations possibles avec plus de temps :
+
+- Utilisation de typage = PropsType ou Typescript
+- Utilisation de modèle de validation de la donnée (JOI, typescript)
+- Utilisation de react hook form pour automatiser les formulaires, la validation et la sécurité des textes.
+- Découpler la partie métier de la partie UI avec de la clean architecture, par exemple port/adapter.
+- Dockeriser l'ensemble pour qu'il n'y est plus de problème à l'initialisation de l'environnement en fonction de l'OS et des versions de node et npm principalement.
+- Travailler avec des components pour ne pas dupliquer le code et améliorer la lisibilité.
+- Utiliser des styled-component pour le css et profiter de la notion d'imbriqué.
+- Mettre en place des tests unitaire (TDD) de notre logique métier avec jest. Les tests d'intégration et e2e sont moins important et plus compliqué à mettre en place et à gérer partant du principe qu'un UI peut changer régulièrement.
+- Refactorer les parties qui en ont besoins.
+- Utiliser un framework css (MUI, Tailwind)
+
+**Important** : Il est intéressant d'utiliser des surcouches, mais pas au détriment de la livraison de fonctionnalités en production. Il faut que d'autres développeur sénior ou junior puissent agir et développer BIEN rapidement.
 
 ## Ta mission
 
@@ -76,16 +95,18 @@ Pour chaque page tu devras intégrer le style de la maquette correspondante. Tu 
 
 ## Installation
 
-Clône ce dépôt et installe les dépendances :
+Clône ce dépôt et installe les dépendances, il est préférable d'utiliser yarn :
 
 ```
-npm install
+yarn install
+ou npm install
 ```
 
 Lance le serveur web :
 
 ```
-npm start
+yarn start
+ou npm start
 ```
 
 Lance dans un autre terminal le serveur de l'API _(depuis la racine)_ :
@@ -99,5 +120,4 @@ _Note : le port par défaut de l'API est 3001._
 ## Rendu
 
 Tu peux nous rendre ton test terminé sous la forme d'un zip (**sans `node_modules`**) ou d'un dépôt git en ligne.
-
 N'hésites pas à nous contacter si tu as la moindre question !
